@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AlbumCard from '../components/AlbumCard.vue';
+</script>
 
 <template>
   <v-main>
@@ -9,5 +11,7 @@
     <div class="d-flex justify-center align-center text-h5 py-14">
       <p class="text-primary">{{ $t('comingSoon') }}</p>
     </div>
+
+    <AlbumCard />
   </v-main>
 </template>
