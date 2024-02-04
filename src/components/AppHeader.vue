@@ -6,7 +6,7 @@
       <h4 class="font-weight-bold text-uppercase">Amalia Cicala Photography</h4>
 
       <div class="d-flex">
-        <v-list-item link :title="$t('menu.home')" />
+        <v-list-item link :title="$t('menu.home')" :to="{ name: 'Home' }" />
 
         <v-menu>
           <template v-slot:activator="{ props }">
@@ -20,7 +20,7 @@
           </v-list>
         </v-menu>
 
-        <v-list-item :title="$t('menu.contacts')"></v-list-item>
+        <v-list-item link :title="$t('menu.contacts')" :to="{ name: 'Contacts' }" />
       </div>
     </v-container>
   </v-app-bar>
