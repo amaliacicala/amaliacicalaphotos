@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-
-onMounted(() => {
-  const api = import.meta.env.VITE_PHOTOSET;
-  console.log(api);
-});
+import HeroSection from '../components/HeroSection.vue';
 </script>
 
 <template>
-  <main></main>
+  <v-main>
+    <HeroSection />
+  </v-main>
 </template>
