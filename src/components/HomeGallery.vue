@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { fetchHomeImages } from '../api/photosets';
-import { Image } from '../types/Photosets';
+import type { Image } from '../types/Photosets';
 import ImageCard from '../components/ImageCard.vue';
 
 const loading = ref(true);
