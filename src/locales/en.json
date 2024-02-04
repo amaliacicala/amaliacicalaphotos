@@ -3,5 +3,7 @@
     "home": "Home",
     "photoAlbums": "Photo Albums",
     "contacts": "Contacts"
-  }
+  },
+  "loading": "Loading full resolution...",
+  "comingSoon": "Content coming soon."
 }

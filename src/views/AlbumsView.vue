@@ -2,7 +2,7 @@
 
 <template>
   <v-main>
-    <h1 class="text-h3">{{ $t('menu.contacts') }}</h1>
+    <h1 class="text-h3">{{ $t('menu.photoAlbums') }}</h1>
 
     <v-divider :thickness="1" class="border-opacity-100 mt-2" />
 

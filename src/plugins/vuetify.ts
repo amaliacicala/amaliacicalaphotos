@@ -1,14 +1,18 @@
 import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
+import { aliases, mdi } from 'vuetify/iconsets/mdi';
+import '@mdi/font/css/materialdesignicons.css';
 import type { ThemeDefinition } from 'vuetify';
 
 const lightTheme: ThemeDefinition = {
   dark: false,
   colors: {
     white: '#FFFDFC',
-    background: '#252522',
-    primary: '#f18257',
-    secondary: '#75ba86',
+    black: '#252522',
+    background: '#FFFDFC',
+    primary: '#b2464e',
+    secondary: '#f18257',
+    tertiary: '#75ba86',
     accent: '#cf6895',
     error: '#E7004C',
     'on-primary': '#252522'
@@ -25,6 +29,13 @@ export default createVuetify({
     defaultTheme: 'lightTheme',
     themes: {
       lightTheme
+    }
+  },
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi
     }
   },
   display: {

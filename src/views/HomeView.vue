@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import HeroSection from '../components/HeroSection.vue';
+import HomeGallery from '../components/HomeGallery.vue';
 </script>
 
 <template>
-  <v-main>
-    <HeroSection />
-  </v-main>
+  <HomeGallery />
 </template>
