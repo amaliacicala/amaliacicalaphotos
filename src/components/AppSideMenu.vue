@@ -3,11 +3,11 @@ import { watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const emit = defineEmits();
+const emits = defineEmits(['close']);
 
 watch([() => route.name], ([newRouteName]) => {
   if (!newRouteName) return;
-  emit('close');
+  emits('close');
 });
 </script>
 

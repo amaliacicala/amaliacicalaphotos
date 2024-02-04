@@ -14,16 +14,12 @@ const dialog = ref(false);
 const openDialog = () => {
   dialog.value = true;
 };
-
-const closeDialog = () => {
-  dialog.value = false;
-};
 </script>
 
 <template>
   <div class="item" @click="openDialog">
     <v-img class="image" :src="props.image.url_c" :alt="props.image.title" />
-    <ImageDialog :image="props.image" :dialog="dialog" @close-dialog="closeDialog()" />
+    <ImageDialog :image="props.image" :dialog="dialog" @close-dialog="dialog = false" />
   </div>
 </template>
 

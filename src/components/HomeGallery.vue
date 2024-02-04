@@ -36,7 +36,7 @@ onMounted(async () => {
 
   <v-main v-else>
     <div class="masonry">
-      <ImageCard v-for="image in images" @open-dialog="openDialog" :key="image.id" :image="image" />
+      <ImageCard v-for="image in images" :key="image.id" :image="image" @open-dialog="openDialog" />
     </div>
   </v-main>
 </template>
