@@ -15,7 +15,7 @@ const lightTheme: ThemeDefinition = {
     tertiary: '#75ba86',
     accent: '#cf6895',
     error: '#E7004C',
-    'on-primary': '#252522'
+    'on-primary': '#FFFDFC'
   },
   variables: {
     'high-emphasis-opacity': 1,

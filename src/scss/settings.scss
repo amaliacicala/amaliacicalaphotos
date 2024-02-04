@@ -89,7 +89,10 @@ $color-dark: #0b1938;
       'letter-spacing': 1.5px,
       'text-transform': uppercase
     )
-  )
+  ),
+  $button-disabled-opacity: 1,
+  $button-disabled-overlay: 0,
+  $button-colored-disabled: false
 );
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
