@@ -1,5 +1,5 @@
-$body-font-family: 'Open Sans', sans-serif;
-$heading-font-family: 'Gotham', sans-serif;
+$body-font-family: 'Syne', sans-serif;
+$heading-font-family: 'Syne', sans-serif;
 
 $color-white: #fffdfc;
 $color-dark: #0b1938;
@@ -71,7 +71,7 @@ $color-dark: #0b1938;
     ),
     'button': (
       'weight': 700,
-      'size': 14px,
+      'size': 16px,
       'line-height': 16px,
       'letter-spacing': 1.25px,
       'text-transform': none
@@ -91,3 +91,5 @@ $color-dark: #0b1938;
     )
   )
 );
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
