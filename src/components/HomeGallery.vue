@@ -1,22 +1,14 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { fetchHomeImages } from '../api/photosets';
-import type { Image } from '../types/Photosets';
+import { storeToRefs } from 'pinia';
+import { usePhotosetsStore } from '../stores/photosets';
 import ImageCard from '../components/ImageCard.vue';
 
-const loading = ref(true);
-const images = ref<Array<Image>>([]);
+const photosetsStore = usePhotosetsStore();
+const { loading, images } = storeToRefs(photosetsStore);
+
 const selectedImage = ref({});
 const dialog = ref(false);
-
-const loadImages = async () => {
-  try {
-    const response = await fetchHomeImages();
-    images.value = response.photoset.photo;
-  } catch (error) {
-    console.error('Error fetching images', error);
-  }
-};
 
 const openDialog = (image: any) => {
   selectedImage.value = image;
@@ -24,7 +16,7 @@ const openDialog = (image: any) => {
 };
 
 onMounted(async () => {
-  await loadImages();
+  await photosetsStore.loadHomeImages();
   loading.value = false;
 });
 </script>
@@ -52,13 +44,11 @@ onMounted(async () => {
     column-count: 3;
   }
 }
-/* Masonry on medium-sized screens */
 @media only screen and (max-width: 1023px) and (min-width: 768px) {
   .masonry {
     column-count: 2;
   }
 }
-/* Masonry on small screens */
 @media only screen and (max-width: 767px) and (min-width: 540px) {
   .masonry {
     column-count: 1;
