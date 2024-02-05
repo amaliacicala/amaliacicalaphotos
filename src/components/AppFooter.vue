@@ -1,10 +1,10 @@
 <template>
   <v-container>
-    <v-footer class="d-flex justify-center text-caption pt-14">
+    <v-footer class="d-flex flex-column flex-sm-row justify-center text-caption pt-6 pt-sm-14">
       <p>© {{ new Date().getFullYear() }} by Amalia Cicala</p>
-      <span class="divider">|</span>
-      <p>cicala.amalia@gmail.com</p>
-      <span class="divider">|</span>
+      <span class="d-none d-sm-block divider">|</span>
+      <p class="my-2 my-sm-0">cicala.amalia@gmail.com</p>
+      <span class="d-none d-sm-block divider">|</span>
       <p>Milan & Worldwide.</p>
     </v-footer>
   </v-container>

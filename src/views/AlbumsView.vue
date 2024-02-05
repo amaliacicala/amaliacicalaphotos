@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AlbumCard from '../components/AlbumCard.vue';
+import AppFooter from '../components/AppFooter.vue';
 </script>
 
 <template>
@@ -14,4 +15,6 @@ import AlbumCard from '../components/AlbumCard.vue';
 
     <AlbumCard />
   </v-main>
+
+  <AppFooter />
 </template>
