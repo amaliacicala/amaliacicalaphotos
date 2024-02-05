@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
 import { fetchHomeImages } from '../api/photosets';
-import type { Image } from '../types/Photosets';
+import { usePhotosetsStore } from '../stores/photosets';
 import ImageCard from '../components/ImageCard.vue';
 
-const loading = ref(true);
-const images = ref<Array<Image>>([]);
 const selectedImage = ref({});
 const dialog = ref(false);
+
+const photosetsStore = usePhotosetsStore();
+const { loading, images } = storeToRefs(photosetsStore);
 
 const loadImages = async () => {
   try {
@@ -24,7 +26,10 @@ const openDialog = (image: any) => {
 };
 
 onMounted(async () => {
-  await loadImages();
+  await photosetsStore.loadAlbum(
+    import.meta.env.VITE_FLICKR_API_KEY,
+    import.meta.env.VITE_HOME_PHOTOSET
+  );
   loading.value = false;
 });
 </script>

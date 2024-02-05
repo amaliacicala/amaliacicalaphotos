@@ -1,3 +1,8 @@
+export interface PhotosetsState {
+  loading: boolean;
+  images: Array<Image>;
+}
+
 export interface Image {
   id: string;
   url_c: string;
