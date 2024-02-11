@@ -11,7 +11,7 @@ const selectedImage = ref({});
 const dialog = ref(false);
 
 const photosetsStore = usePhotosetsStore();
-const { loading, images } = storeToRefs(photosetsStore);
+const { loading, images, albumData } = storeToRefs(photosetsStore);
 
 const openDialog = (image: any) => {
   selectedImage.value = image;
@@ -33,8 +33,8 @@ onMounted(async () => {
 <template>
   <v-container v-if="photosetsStore.albumData.title && photosetsStore.albumData.description">
     <div class="d-md-flex justify-md-space-between align-md-end text-center">
-      <h1 class="text-h4 text-sm-h3">{{ photosetsStore.albumData.title }}</h1>
-      <p class="pt-2 pt-md-0">{{ photosetsStore.albumData.description }}</p>
+      <h1 class="text-h4 text-sm-h3">{{ albumData.title }}</h1>
+      <p class="pt-2 pt-md-0">{{ albumData.description }}</p>
     </div>
 
     <v-divider :thickness="1" class="border-opacity-100 mt-2" />
