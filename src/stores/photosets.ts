@@ -6,7 +6,11 @@ export const usePhotosetsStore = defineStore({
   id: 'photosets',
   state: (): PhotosetsState => ({
     loading: true,
-    images: []
+    images: [],
+    albumData: {
+      title: '',
+      description: ''
+    }
   }),
 
   actions: {
@@ -15,13 +19,13 @@ export const usePhotosetsStore = defineStore({
         const homeImagesData = await fetchAlbum(apiKey, photosetId);
 
         this.images = homeImagesData.photoset.photo;
-
-        console.log(this.images);
-
-        this.loading = false;
       } catch (err) {
         return Promise.reject(err);
       }
+    },
+    setAlbumData(title: string, description: string) {
+      this.albumData.title = title;
+      this.albumData.description = description;
     }
   }
 });

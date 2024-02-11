@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
+import { useRoute } from 'vue-router';
 import { usePhotosetsStore } from '../stores/photosets';
 import ImageCard from '../components/ImageCard.vue';
+
+const route = useRoute();
 
 const selectedImage = ref({});
 const dialog = ref(false);
@@ -18,10 +21,8 @@ const openDialog = (image: any) => {
 onMounted(async () => {
   loading.value = true;
 
-  await photosetsStore.loadAlbum(
-    import.meta.env.VITE_FLICKR_API_KEY,
-    import.meta.env.VITE_HOME_PHOTOSET
-  );
+  const photosetId = route.params.photosetId as string;
+  await photosetsStore.loadAlbum(import.meta.env.VITE_FLICKR_API_KEY, photosetId);
 
   setTimeout(() => {
     loading.value = false;
@@ -30,15 +31,24 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="loading" class="d-flex justify-center align-center h-screen">
+  <v-container v-if="photosetsStore.albumData.title && photosetsStore.albumData.description">
+    <div class="d-md-flex justify-md-space-between align-md-end text-center">
+      <h1 class="text-h4 text-sm-h3">{{ photosetsStore.albumData.title }}</h1>
+      <p class="pt-2 pt-md-0">{{ photosetsStore.albumData.description }}</p>
+    </div>
+
+    <v-divider :thickness="1" class="border-opacity-100 mt-2" />
+  </v-container>
+
+  <div v-if="loading" class="d-flex justify-center align-center pt-14">
     <v-progress-circular indeterminate color="black" bg-color="primary" width="12" size="100" />
   </div>
 
-  <v-main v-else class="pt-0">
+  <v-container v-else>
     <div class="masonry">
       <ImageCard v-for="image in images" :key="image.id" :image="image" @open-dialog="openDialog" />
     </div>
-  </v-main>
+  </v-container>
 </template>
 
 <style lang="scss" scoped>

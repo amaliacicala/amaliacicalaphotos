@@ -8,7 +8,7 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
 </script>
 
 <template>
-  <v-main>
+  <v-container>
     <h1 class="text-h3">{{ $t('menu.contacts') }}</h1>
 
     <v-divider :thickness="1" class="border-opacity-100 mt-2" />
@@ -35,5 +35,5 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
         </v-btn>
       </div>
     </div>
-  </v-main>
+  </v-container>
 </template>
