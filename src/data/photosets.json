@@ -1,0 +1,52 @@
+{
+  "albums": [
+    {
+      "photosetId": "72177720314539377",
+      "title": "TesseracT",
+      "description": "Alcatraz, Milan - Jan 28, 2024",
+      "image": "https://live.staticflickr.com/65535/53507444595_13502ede11_z.jpg"
+    },
+    {
+      "photosetId": "72177720314615860",
+      "title": "Unprocessed",
+      "description": "Alcatraz, Milan - Jan 28, 2024",
+      "image": "https://live.staticflickr.com/65535/53513442411_4627f02daf_z.jpg"
+    },
+    {
+      "photosetId": "72177720314700710",
+      "title": "ten56",
+      "description": "Dissonance Festival @ Circolo Magnolia, Milan - Jun 3, 2023",
+      "image": "https://live.staticflickr.com/65535/53511778590_500a9a3f3d_z.jpg"
+    },
+    {
+      "photosetId": "72177720314701716",
+      "title": "Meshuggah",
+      "description": "Dissonance Festival @ Circolo Magnolia, Milan - Jun 3, 2023",
+      "image": "https://live.staticflickr.com/65535/53511351221_40a5401377_z.jpg"
+    },
+    {
+      "photosetId": "72177720314702331",
+      "title": "Benthos",
+      "description": "Dissonance Festival @ Circolo Magnolia, Milan - Jun 3, 2023",
+      "image": "https://live.staticflickr.com/65535/53511349686_a39cf8114f_z.jpg"
+    },
+    {
+      "photosetId": "72177720314696712",
+      "title": "Soen",
+      "description": "Dissonance Festival @ Circolo Magnolia, Milan - Jun 3, 2023",
+      "image": "https://live.staticflickr.com/65535/53511509788_ae042fbbf8_z.jpg"
+    },
+    {
+      "photosetId": "72177720314700362",
+      "title": "Benthos",
+      "description": "Rock'n'Roll, Milan - Sep 17, 2023",
+      "image": "https://live.staticflickr.com/65535/53521824830_6d0033aec2_z.jpg"
+    },
+    {
+      "photosetId": "72177720314724504",
+      "title": "Benthos",
+      "description": "Slaughter Club, Milan - Nov 05, 2023",
+      "image": "https://live.staticflickr.com/65535/53521789404_bf079f10f7_z.jpg"
+    }
+  ]
+}

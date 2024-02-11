@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import HomeGallery from '../components/HomeGallery.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: HomeView
+      component: HomeGallery
     },
     {
       path: '/contacts',
@@ -18,8 +18,23 @@ const router = createRouter({
       path: '/albums',
       name: 'Albums',
       component: () => import('../views/AlbumsView.vue')
+    },
+    {
+      path: '/gallery/:photosetId',
+      name: 'AlbumGallery',
+      component: () => import('../views/GalleryView.vue')
     }
-  ]
+  ],
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth'
+      };
+    } else {
+      return { top: 0, behavior: 'instant' };
+    }
+  }
 });
 
 export default router;
