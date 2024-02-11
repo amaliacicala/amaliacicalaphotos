@@ -24,7 +24,17 @@ const router = createRouter({
       name: 'AlbumGallery',
       component: () => import('../views/GalleryView.vue')
     }
-  ]
+  ],
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth'
+      };
+    } else {
+      return { top: 0, behavior: 'instant' };
+    }
+  }
 });
 
 export default router;
