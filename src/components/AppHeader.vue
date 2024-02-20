@@ -28,7 +28,7 @@ const router = useRouter();
           link
           :aria-label="$t('menu.home')"
           :to="{ name: 'Home' }"
-          width="150"
+          width="140"
           height="64"
           class="d-flex justify-center text-uppercase text-button font-weight-medium"
           active-class="active font-weight-bold"
@@ -40,7 +40,7 @@ const router = useRouter();
           link
           :aria-label="$t('menu.photoAlbums')"
           :to="{ name: 'Albums' }"
-          width="180"
+          width="200"
           height="64"
           class="d-flex justify-center text-uppercase text-button font-weight-medium"
           active-class="active font-weight-bold"
@@ -52,7 +52,7 @@ const router = useRouter();
           link
           :aria-label="$t('menu.contacts')"
           :to="{ name: 'Contacts' }"
-          width="150"
+          width="140"
           class="d-flex justify-center text-uppercase text-button font-weight-medium"
           active-class="active font-weight-bold"
         >
