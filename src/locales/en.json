@@ -5,6 +5,7 @@
     "contacts": "Contacts"
   },
   "loading": "Loading full resolution...",
+  "scrollToTop": "Scroll back to top",
   "copy": "Copy address",
   "copied": "Copied."
 }

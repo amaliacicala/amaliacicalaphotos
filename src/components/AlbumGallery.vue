@@ -4,6 +4,7 @@ import { storeToRefs } from 'pinia';
 import { useRoute } from 'vue-router';
 import { usePhotosetsStore } from '../stores/photosets';
 import ImageCard from '../components/ImageCard.vue';
+import ScrollToTop from './ScrollToTop.vue';
 
 const route = useRoute();
 
@@ -48,6 +49,8 @@ onMounted(async () => {
     <div class="masonry">
       <ImageCard v-for="image in images" :key="image.id" :image="image" @open-dialog="openDialog" />
     </div>
+
+    <ScrollToTop />
   </v-container>
 </template>
 

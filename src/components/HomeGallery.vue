@@ -2,7 +2,8 @@
 import { ref, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { usePhotosetsStore } from '../stores/photosets';
-import ImageCard from '../components/ImageCard.vue';
+import ImageCard from './ImageCard.vue';
+import ScrollToTop from './ScrollToTop.vue';
 
 const selectedImage = ref({});
 const dialog = ref(false);
@@ -38,6 +39,8 @@ onMounted(async () => {
     <div class="masonry">
       <ImageCard v-for="image in images" :key="image.id" :image="image" @open-dialog="openDialog" />
     </div>
+
+    <ScrollToTop />
   </v-main>
 </template>
 
