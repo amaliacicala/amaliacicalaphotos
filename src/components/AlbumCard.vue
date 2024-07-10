@@ -49,7 +49,7 @@ const navigateToAlbum = (album: any) => {
             </template>
           </v-img>
           <v-main class="d-flex flex-column align-center text-center py-4 py-sm-6">
-            <v-card-title class="text-h5">{{ album.title }}</v-card-title>
+            <v-card-title class="text-h5 text-wrap">{{ album.title }}</v-card-title>
             <v-card-item class="min-height">{{ album.description }}</v-card-item>
           </v-main>
         </v-card>
