@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useClipboard } from '@vueuse/core';
 import { ref } from 'vue';
+import { useClipboard } from '@vueuse/core';
 
 const source = ref('cicala.amalia@gmail.com');
 
@@ -34,6 +34,18 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
           <span v-else>{{ $t('copied') }}</span>
         </v-btn>
       </div>
+
+      <v-btn
+        elevation="0"
+        variant="outlined"
+        size="large"
+        color="primary"
+        href="https://buymeacoffee.com/amaliacicala"
+        target="_blank"
+        class="text-uppercase my-12"
+      >
+        ☕️ Buy me a coffee
+      </v-btn>
     </div>
   </v-container>
 </template>
