@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useClipboard } from '@vueuse/core';
+import contacts_image from '@/assets/contacts_image.avif';
 
 const source = ref('cicala.amalia@gmail.com');
 
@@ -13,8 +14,12 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
 
     <v-divider :thickness="1" class="border-opacity-100 mt-2" />
 
-    <div class="d-flex flex-column justify-center align-center mt-14">
-      <p class="text-h6 mb-10">Based in <span class="text-primary">Milan</span>, Italy.</p>
+    <div class="d-flex flex-column justify-center align-center mt-10 mt-md-14">
+      <v-avatar size="100" class="cursor-help">
+        <v-img cover alt="Amalia Cicala" :src="contacts_image"></v-img>
+      </v-avatar>
+
+      <p class="text-h6 mt-8 mb-10">Based in <span class="text-primary">Milan</span>, Italy.</p>
 
       <p class="text-h6 text-center mb-10">
         {{ $t('contactsBody') }}
@@ -51,3 +56,12 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
     </div>
   </v-container>
 </template>
+
+<style lang="scss" scoped>
+.v-avatar {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+</style>
