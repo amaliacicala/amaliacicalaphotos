@@ -35,12 +35,12 @@ onMounted(async () => {
     <v-progress-circular indeterminate color="black" bg-color="primary" width="12" size="100" />
   </div>
 
-  <v-main v-else class="pt-0">
+  <v-main v-else class="py-0">
     <div class="masonry">
       <ImageCard v-for="image in images" :key="image.id" :image="image" @open-dialog="openDialog" />
     </div>
 
-    <ScrollToTop />
+    <ScrollToTop v-if="!loading" />
   </v-main>
 </template>
 

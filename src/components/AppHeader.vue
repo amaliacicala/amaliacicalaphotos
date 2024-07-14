@@ -11,7 +11,7 @@ const router = useRouter();
   <v-app-bar
     elevation="0"
     scroll-behavior="hide"
-    scroll-threshold="179"
+    scroll-threshold="200"
     color="white"
     class="pa-2 pa-md-0"
   >

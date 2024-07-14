@@ -44,7 +44,7 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
         color="primary"
         href="https://buymeacoffee.com/amaliacicala"
         target="_blank"
-        class="text-uppercase my-12"
+        class="text-uppercase mt-12"
       >
         {{ $t('buyMeCoffee') }}
       </v-btn>

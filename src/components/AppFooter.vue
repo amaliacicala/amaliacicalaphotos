@@ -3,6 +3,7 @@
     <v-footer
       absolute
       app
+      :elevation="2"
       class="d-flex flex-column flex-sm-row justify-center bg-white text-caption py-8"
     >
       <p>© {{ new Date().getFullYear() }} by Amalia Cicala</p>
