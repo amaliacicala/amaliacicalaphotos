@@ -16,24 +16,26 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
     <div class="d-flex flex-column justify-center align-center mt-14">
       <p class="text-h6 mb-10">Based in <span class="text-primary">Milan</span>, Italy.</p>
 
-      <span class="d-flex align-center text-sm-h5">
-        <v-icon icon="mdi-email" class="mr-2" />
-        <h3>{{ source }}</h3>
+      <p class="text-h6 text-center mb-10">
+        {{ $t('contactsBody') }}
+      </p>
+
+      <span
+        v-if="isSupported"
+        class="d-flex flex-column align-center text-sm-h5 cursor-pointer"
+        :disabled="!copied ? false : true"
+        @click="copy(source)"
+      >
+        <h2 class="text-h6 text-md-h4 text-center">✉️ {{ source }}</h2>
+
+        <span v-if="copied" class="mt-4 text-uppercase text-caption text-primary font-weight-bold">
+          {{ $t('copied') }}
+        </span>
       </span>
 
-      <div v-if="isSupported" class="mt-6">
-        <v-btn
-          elevation="0"
-          size="small"
-          :color="!copied ? 'primary' : 'white'"
-          :disabled="!copied ? false : true"
-          class="text-uppercase text-caption"
-          @click="copy(source)"
-        >
-          <span v-if="!copied">{{ $t('copy') }}</span>
-          <span v-else>{{ $t('copied') }}</span>
-        </v-btn>
-      </div>
+      <span v-else class="d-flex align-center text-sm-h5">
+        <h2 class="text-h6 text-md-h4 text-center">✉️ {{ source }}</h2>
+      </span>
 
       <v-btn
         elevation="0"
@@ -44,7 +46,7 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
         target="_blank"
         class="text-uppercase my-12"
       >
-        ☕️ Buy me a coffee
+        {{ $t('buyMeCoffee') }}
       </v-btn>
     </div>
   </v-container>
