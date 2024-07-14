@@ -52,7 +52,7 @@ const router = useRouter();
           link
           :aria-label="$t('menu.contacts')"
           :to="{ name: 'Contacts' }"
-          width="140"
+          width="160"
           class="d-flex justify-center text-uppercase text-button font-weight-medium"
           active-class="active font-weight-bold"
         >
