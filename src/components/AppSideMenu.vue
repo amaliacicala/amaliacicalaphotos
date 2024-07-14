@@ -14,7 +14,6 @@ watch([() => route.name], ([newRouteName]) => {
 <template>
   <v-btn
     icon="mdi-close"
-    :rounded="0"
     variant="text"
     color="primary"
     class="d-flex ml-auto px-6"
