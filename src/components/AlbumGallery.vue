@@ -45,7 +45,7 @@ onMounted(async () => {
     <v-progress-circular indeterminate color="black" bg-color="primary" width="12" size="100" />
   </div>
 
-  <v-container v-else>
+  <v-container v-else class="pt-0 pt-md-4">
     <div class="masonry">
       <ImageCard v-for="image in images" :key="image.id" :image="image" @open-dialog="openDialog" />
     </div>

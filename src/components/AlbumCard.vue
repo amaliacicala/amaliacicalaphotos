@@ -25,7 +25,7 @@ const navigateToAlbum = (album: any) => {
     <v-progress-circular indeterminate color="black" bg-color="primary" width="12" size="100" />
   </div>
 
-  <v-container v-else class="mt-6">
+  <v-container v-else class="mt-0 mt-md-4">
     <v-row>
       <v-col
         v-for="(album, index) in photosets.albums"
