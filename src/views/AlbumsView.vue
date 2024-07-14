@@ -8,9 +8,9 @@ const photosetsStore = usePhotosetsStore();
 const { loading, images } = storeToRefs(photosetsStore);
 
 onMounted(async () => {
-  loading.value = true;
-
   if (images.value.length === 0) {
+    loading.value = true;
+
     await photosetsStore.loadAlbum(
       import.meta.env.VITE_FLICKR_API_KEY,
       import.meta.env.VITE_HOME_PHOTOSET
