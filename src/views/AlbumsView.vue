@@ -1,5 +1,26 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
+import { usePhotosetsStore } from '@/stores/photosets';
 import AlbumCard from '../components/AlbumCard.vue';
+
+const photosetsStore = usePhotosetsStore();
+const { loading, images } = storeToRefs(photosetsStore);
+
+onMounted(async () => {
+  loading.value = true;
+
+  if (images.value.length === 0) {
+    await photosetsStore.loadAlbum(
+      import.meta.env.VITE_FLICKR_API_KEY,
+      import.meta.env.VITE_HOME_PHOTOSET
+    );
+
+    setTimeout(() => {
+      loading.value = false;
+    }, 30);
+  }
+});
 </script>
 
 <template>
