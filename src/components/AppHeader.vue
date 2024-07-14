@@ -78,7 +78,7 @@ const router = useRouter();
         class="justify-start"
         transition="slide-x-transition"
       >
-        <v-card height="100%" class="py-2 px-4" rounded="0">
+        <v-card height="100%" class="py-2 pl-4 pr-2" rounded="0">
           <AppSideMenu @close="navigation = false" />
         </v-card>
       </v-dialog>

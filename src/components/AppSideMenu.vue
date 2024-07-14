@@ -17,7 +17,7 @@ watch([() => route.name], ([newRouteName]) => {
     :rounded="0"
     variant="text"
     color="primary"
-    class="d-flex ml-auto"
+    class="d-flex ml-auto px-6"
     width="24px"
     @click="$emit('close')"
   />
