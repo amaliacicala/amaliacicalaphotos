@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
-import { useRoute } from 'vue-router';
-import { usePhotosetsStore } from '../stores/photosets';
-import ImageCard from '../components/ImageCard.vue';
+import { usePhotosetsStore } from '@/stores/photosets';
+import ImageCard from './ImageCard.vue';
 import ScrollToTop from './ScrollToTop.vue';
-
-const route = useRoute();
 
 const selectedImage = ref({});
 const dialog = ref(false);
 
 const photosetsStore = usePhotosetsStore();
-const { loading, images, albumData } = storeToRefs(photosetsStore);
+const { loading, images } = storeToRefs(photosetsStore);
 
 const openDialog = (image: any) => {
   selectedImage.value = image;
@@ -22,8 +19,10 @@ const openDialog = (image: any) => {
 onMounted(async () => {
   loading.value = true;
 
-  const photosetId = route.params.photosetId as string;
-  await photosetsStore.loadAlbum(import.meta.env.VITE_FLICKR_API_KEY, photosetId);
+  await photosetsStore.loadAlbum(
+    import.meta.env.VITE_FLICKR_API_KEY,
+    import.meta.env.VITE_HOME_PHOTOSET
+  );
 
   setTimeout(() => {
     loading.value = false;
@@ -32,26 +31,17 @@ onMounted(async () => {
 </script>
 
 <template>
-  <v-container v-if="photosetsStore.albumData.title && photosetsStore.albumData.description">
-    <div class="d-md-flex justify-md-space-between align-md-end text-center">
-      <h1 class="text-h4 text-sm-h3">{{ albumData.title }}</h1>
-      <p class="pt-2 pt-md-0">{{ albumData.description }}</p>
-    </div>
-
-    <v-divider :thickness="1" class="border-opacity-100 mt-2" />
-  </v-container>
-
-  <div v-if="loading" class="d-flex justify-center align-center pt-14">
+  <div v-if="loading" class="d-flex justify-center align-center h-screen">
     <v-progress-circular indeterminate color="black" bg-color="primary" width="12" size="100" />
   </div>
 
-  <v-container v-else class="pt-0 pt-md-4">
+  <v-main v-else class="py-0">
     <div class="masonry">
       <ImageCard v-for="image in images" :key="image.id" :image="image" @open-dialog="openDialog" />
     </div>
 
-    <ScrollToTop />
-  </v-container>
+    <ScrollToTop v-if="!loading" />
+  </v-main>
 </template>
 
 <style lang="scss" scoped>

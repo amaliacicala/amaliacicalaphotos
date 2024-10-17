@@ -3,9 +3,9 @@ import { ref } from 'vue';
 import { useClipboard } from '@vueuse/core';
 import contacts_image from '@/assets/contacts_image.avif';
 
-const source = ref('cicala.amalia@gmail.com');
+const source = ref('photos@amaliacicala.com');
 
-const { text, copy, copied, isSupported } = useClipboard({ source });
+const { copy, copied, isSupported } = useClipboard({ source });
 </script>
 
 <template>
@@ -31,7 +31,7 @@ const { text, copy, copied, isSupported } = useClipboard({ source });
         :disabled="!copied ? false : true"
         @click="copy(source)"
       >
-        <h2 class="text-h6 text-md-h4 text-center">✉️ {{ source }}</h2>
+        <h2 class="text-h5 text-md-h4 text-center">✉️ photos<wbr />@amaliacicala.com</h2>
 
         <span v-if="copied" class="mt-4 text-uppercase text-caption text-primary font-weight-bold">
           {{ $t('copied') }}

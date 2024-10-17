@@ -2,7 +2,7 @@
 import { onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { usePhotosetsStore } from '@/stores/photosets';
-import AlbumCard from '../components/AlbumCard.vue';
+import AlbumCard from '@/components/photos/AlbumCard.vue';
 
 const photosetsStore = usePhotosetsStore();
 const { loading, images } = storeToRefs(photosetsStore);

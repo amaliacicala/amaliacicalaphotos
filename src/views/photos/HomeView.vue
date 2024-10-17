@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HomeGallery from '../components/HomeGallery.vue';
+import HomeGallery from '@/components/photos/HomeGallery.vue';
 </script>
 
 <template>

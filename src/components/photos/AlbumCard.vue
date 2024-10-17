@@ -2,8 +2,8 @@
 import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
 import { useDisplay } from 'vuetify';
-import { usePhotosetsStore } from '../stores/photosets';
-import photosets from '../data/photosets.json';
+import { usePhotosetsStore } from '@/stores/photosets';
+import photosets from '@/data/photosets.json';
 
 const router = useRouter();
 const { mobile } = useDisplay();
@@ -29,8 +29,8 @@ const navigateToAlbum = (album: any) => {
     <v-row>
       <v-col
         v-for="(album, index) in photosets.albums"
-        lg="3"
         :key="index"
+        lg="3"
         class="d-flex justify-center my-2"
       >
         <v-card
@@ -38,11 +38,11 @@ const navigateToAlbum = (album: any) => {
           variant="outlined"
           cursor-pointer
           :loading="photosets.albums ? false : true"
-          @click="navigateToAlbum(album)"
           rel="noopener"
+          @click="navigateToAlbum(album)"
         >
           <v-img cover aspect-ratio="16/9" min-height="200" max-height="200" :src="album.image">
-            <template v-slot:placeholder>
+            <template #placeholder>
               <div class="d-flex align-center justify-center fill-height">
                 <v-progress-circular color="black" bg-color="primary" indeterminate />
               </div>

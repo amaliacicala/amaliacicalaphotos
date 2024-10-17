@@ -1,28 +1,46 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeGallery from '../components/HomeGallery.vue';
+import HomeGlobalView from '../views/global/HomeGlobalView.vue';
+import ArtistManagementView from '../views/management/ArtistManagementView.vue';
+import HomeGallery from '../components/photos/HomeGallery.vue';
+import MarketingView from '../views/marketing/MarketingView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'HomeGlobal',
+      component: HomeGlobalView
+    },
+    {
+      path: '/artist-management',
+      name: 'ArtistManagement',
+      component: ArtistManagementView
+    },
+    {
+      path: '/photos',
+      name: 'HomePhotos',
       component: HomeGallery
     },
     {
-      path: '/contacts',
+      path: '/photos/contacts',
       name: 'Contacts',
-      component: () => import('../views/ContactsView.vue')
+      component: () => import('../views/photos/ContactsView.vue')
     },
     {
-      path: '/albums',
+      path: '/photos/albums',
       name: 'Albums',
-      component: () => import('../views/AlbumsView.vue')
+      component: () => import('../views/photos/AlbumsView.vue')
     },
     {
-      path: '/gallery/:photosetId',
+      path: '/photos/gallery/:photosetId',
       name: 'AlbumGallery',
-      component: () => import('../views/GalleryView.vue')
+      component: () => import('../views/photos/GalleryView.vue')
+    },
+    {
+      path: '/music-digital-marketing',
+      name: 'Marketing',
+      component: MarketingView
     }
   ],
   scrollBehavior(to) {

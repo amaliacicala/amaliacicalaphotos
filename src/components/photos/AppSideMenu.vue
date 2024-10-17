@@ -24,7 +24,7 @@ watch([() => route.name], ([newRouteName]) => {
   <v-list-item
     link
     :aria-label="$t('menu.home')"
-    :to="{ name: 'Home' }"
+    :to="{ name: 'HomePhotos' }"
     height="100"
     class="text-uppercase text-button font-weight-medium"
     active-class="active font-weight-bold"

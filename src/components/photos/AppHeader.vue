@@ -18,7 +18,7 @@ const router = useRouter();
     <v-container class="d-flex justify-space-between align-center">
       <h4
         class="clickable h4 w-50 w-md-100 font-weight-bold text-uppercase"
-        @click="router.push({ name: 'Home' })"
+        @click="router.push({ name: 'HomePhotos' })"
       >
         Amalia Cicala Photography
       </h4>
@@ -27,7 +27,7 @@ const router = useRouter();
         <v-list-item
           link
           :aria-label="$t('menu.home')"
-          :to="{ name: 'Home' }"
+          :to="{ name: 'HomePhotos' }"
           width="140"
           height="64"
           class="d-flex justify-center text-uppercase text-button font-weight-medium"
