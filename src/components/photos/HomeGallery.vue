@@ -32,7 +32,7 @@ onMounted(async () => {
 
 <template>
   <div v-if="loading" class="d-flex justify-center align-center h-screen">
-    <v-progress-circular indeterminate color="black" bg-color="primary" width="12" size="100" />
+    <v-progress-circular indeterminate color="black" bg-color="secondary" width="12" size="100" />
   </div>
 
   <v-main v-else class="py-0">

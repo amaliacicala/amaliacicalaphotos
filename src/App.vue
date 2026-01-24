@@ -21,9 +21,9 @@ const route = useRoute();
 
         <AppFooter v-if="route.path.includes('photos')" />
 
-        <div v-else class="d-flex justify-end">
+        <div v-else class="d-flex justify-end mt-16">
           <p class="position-absolute position-props text-caption">
-            © {{ new Date().getFullYear() }}
+            P.IVA 13915370962 | Amalia Cicala © {{ new Date().getFullYear() }}
           </p>
         </div>
       </v-content>
@@ -37,6 +37,12 @@ const route = useRoute();
 }
 .app-border {
   border: solid 16px rgb(var(--v-theme-secondary));
+}
+@media (max-width: 768px) {
+  .app-border {
+    border: solid 10px rgb(var(--v-theme-secondary));
+    padding: 4px;
+  }
 }
 .position-props {
   bottom: 26px;

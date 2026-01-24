@@ -42,7 +42,7 @@ onMounted(async () => {
   </v-container>
 
   <div v-if="loading" class="d-flex justify-center align-center pt-14">
-    <v-progress-circular indeterminate color="black" bg-color="primary" width="12" size="100" />
+    <v-progress-circular indeterminate color="black" bg-color="secondary" width="12" size="100" />
   </div>
 
   <v-container v-else class="pt-0 pt-md-4">

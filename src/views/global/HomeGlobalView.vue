@@ -26,6 +26,7 @@ const { mobile } = useDisplay();
           class="border border-opacity-50 border-secondary"
           height="48px"
           @click="router.push({ path: '/photos' })"
+          target="_blank"
         >
           Music Photography
         </v-btn>
@@ -48,7 +49,7 @@ const { mobile } = useDisplay();
       >
         <v-btn @click="router.push({ path: '/artist-management' })">Artist Management </v-btn>
 
-        <v-btn @click="router.push({ path: '/photos' })"> Music Photography </v-btn>
+        <v-btn @click="router.push({ path: '/photos' })" target="_blank"> Music Photography </v-btn>
 
         <v-btn @click="router.push({ path: '/music-digital-marketing' })">
           Music Digital Marketing

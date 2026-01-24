@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useDisplay } from 'vuetify';
+
 import { useClipboard } from '@vueuse/core';
 
 const router = useRouter();
+const { mobile } = useDisplay();
 
-const source = ref('info@amaliacicala.com');
+const source = ref('amalia@bands.management');
 
 const { copy, copied, isSupported } = useClipboard({ source });
 </script>
@@ -13,14 +16,21 @@ const { copy, copied, isSupported } = useClipboard({ source });
 <template>
   <v-slide-x-transition appear>
     <div class="d-flex flex-column align-center justify-center h-100">
-      <div class="mb-12">
+      <div :class="mobile ? '' : 'w-75'">
+        <p class="text-h5 text-sm-h4 font-weight-bold text-center mt-4">
+          Get in touch for bespoke Facebook and Instagram ad campaigns for releases, merch, or
+          shows; tailored to your genre and brand.
+        </p>
+      </div>
+
+      <div class="d-flex my-12">
         <span
           v-if="isSupported"
           class="d-flex flex-column align-center text-sm-h5 cursor-pointer"
           :disabled="!copied ? false : true"
           @click="copy(source)"
         >
-          <h2 class="text-h5 text-sm-h4 text-center">✉️ info<wbr />@amaliacicala.com</h2>
+          <h2 class="text-h6 text-sm-h5 text-center">✉️ amalia<wbr />@bands.management</h2>
 
           <span
             class="mt-4 text-uppercase text-caption text-secondary font-weight-bold"
@@ -31,7 +41,7 @@ const { copy, copied, isSupported } = useClipboard({ source });
         </span>
 
         <span v-else class="d-flex align-center text-sm-h5">
-          <h2 class="text-h6 text-md-h4 text-center">✉️ {{ source }}</h2>
+          <h2 class="text-body-1 text-md-h4 font-weight-medium text-center">✉️ {{ source }}</h2>
         </span>
       </div>
 

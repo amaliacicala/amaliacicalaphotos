@@ -15,7 +15,7 @@ watch([() => route.name], ([newRouteName]) => {
   <v-btn
     icon="mdi-close"
     variant="text"
-    color="primary"
+    color="secondary"
     class="d-flex ml-auto px-6"
     width="24px"
     @click="$emit('close')"

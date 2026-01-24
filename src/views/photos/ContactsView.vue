@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useClipboard } from '@vueuse/core';
 import contacts_image from '@/assets/contacts_image.avif';
 
-const source = ref('photos@amaliacicala.com');
+const source = ref('amalia@bands.management');
 
 const { copy, copied, isSupported } = useClipboard({ source });
 </script>
@@ -19,7 +19,9 @@ const { copy, copied, isSupported } = useClipboard({ source });
         <v-img cover alt="Amalia Cicala" :src="contacts_image"></v-img>
       </v-avatar>
 
-      <p class="text-h6 mt-8 mb-10">Based in <span class="text-primary">Milan</span>, Italy.</p>
+      <p class="text-h6 text-center mt-8 mb-10">
+        Concert and band photograpger based in <span class="text-secondary">Milan</span>, Italy.
+      </p>
 
       <p class="text-h6 text-center mb-10">
         {{ $t('contactsBody') }}
@@ -31,9 +33,12 @@ const { copy, copied, isSupported } = useClipboard({ source });
         :disabled="!copied ? false : true"
         @click="copy(source)"
       >
-        <h2 class="text-h5 text-md-h4 text-center">✉️ photos<wbr />@amaliacicala.com</h2>
+        <h2 class="text-h5 text-md-h4 text-center">✉️ amalia<wbr />@bands.management</h2>
 
-        <span v-if="copied" class="mt-4 text-uppercase text-caption text-primary font-weight-bold">
+        <span
+          v-if="copied"
+          class="mt-4 text-uppercase text-caption text-secondary font-weight-bold"
+        >
           {{ $t('copied') }}
         </span>
       </span>
@@ -41,18 +46,6 @@ const { copy, copied, isSupported } = useClipboard({ source });
       <span v-else class="d-flex align-center text-sm-h5">
         <h2 class="text-h6 text-md-h4 text-center">✉️ {{ source }}</h2>
       </span>
-
-      <v-btn
-        elevation="0"
-        variant="outlined"
-        size="large"
-        color="primary"
-        href="https://buymeacoffee.com/amaliacicala"
-        target="_blank"
-        class="text-uppercase mt-12"
-      >
-        {{ $t('buyMeCoffee') }}
-      </v-btn>
     </div>
   </v-container>
 </template>

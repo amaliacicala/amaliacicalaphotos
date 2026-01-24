@@ -22,7 +22,7 @@ const navigateToAlbum = (album: any) => {
 
 <template>
   <div v-if="loading" class="d-flex justify-center align-center pt-14">
-    <v-progress-circular indeterminate color="black" bg-color="primary" width="12" size="100" />
+    <v-progress-circular indeterminate color="black" bg-color="secondary" width="12" size="100" />
   </div>
 
   <v-container v-else class="mt-0 mt-md-4">
@@ -44,7 +44,7 @@ const navigateToAlbum = (album: any) => {
           <v-img cover aspect-ratio="16/9" min-height="200" max-height="200" :src="album.image">
             <template #placeholder>
               <div class="d-flex align-center justify-center fill-height">
-                <v-progress-circular color="black" bg-color="primary" indeterminate />
+                <v-progress-circular color="black" bg-color="secondary" indeterminate />
               </div>
             </template>
           </v-img>
