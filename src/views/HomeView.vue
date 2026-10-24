@@ -182,7 +182,12 @@ async function copyMail() {
           <li><span class="when">2025 – now</span><div>
             <h3>Artist Manager</h3>
             <p class="org">BANDS Management · Worthing, UK · Full-time, hybrid</p>
-            <p class="d">Sole manager of Benthos since 2023, covering management, marketing, booking and tour management. Co-manager of Earthside, Einar Solberg, Caligula’s Horse, Textures, Voyager and Unprocessed, working on releases, campaigns, touring and merch. Runs the Leprous Patreon with the team: content planning, posting, exclusive drops, community management and supporter merch.</p>
+            <p class="d">Sole manager of Benthos, now as part of the agency, covering management, marketing, booking and tour management. Co-manager of Earthside, Einar Solberg, Caligula’s Horse, Textures, Voyager and Unprocessed, working on releases, campaigns, touring and merch. Runs the Leprous Patreon with the team: content planning, posting, exclusive drops, community management and supporter merch.</p>
+          </div></li>
+          <li><span class="when">2023 – 2025</span><div>
+            <h3>Artist Manager</h3>
+            <p class="org">Independent · Milan</p>
+            <p class="d">Started managing Benthos on my own in 2023, covering management, marketing, booking and tour management, before joining BANDS Management.</p>
           </div></li>
           <li><span class="when">2020 – now</span><div>
             <h3>Music Marketing &amp; Digital Management</h3>
