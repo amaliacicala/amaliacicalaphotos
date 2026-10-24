@@ -83,7 +83,7 @@ section.block{border-top:1px solid var(--line);padding-block:clamp(56px,8vw,104p
 
 /* roster */
 .roster{list-style:none;margin:0;padding:0;border-top:1px solid var(--sage)}
-.roster li{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.6fr) 70px minmax(0,1fr);gap:16px;align-items:baseline;padding-block:20px;border-bottom:1px solid var(--line);transition:padding .25s}
+.roster li{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.6fr) 56px minmax(0,.8fr) 72px;gap:16px;align-items:baseline;padding-block:20px;border-bottom:1px solid var(--line);transition:padding .25s}
 .roster li:hover{padding-left:10px}
 .roster .name{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.4rem);letter-spacing:-.02em;line-height:1.05}
 .roster li:hover .name{color:var(--coral)}
@@ -94,7 +94,12 @@ section.block{border-top:1px solid var(--line);padding-block:clamp(56px,8vw,104p
 .pill.sage{border-color:var(--sage);color:var(--sage-ink);background:var(--sage-wash)}
 .pill.co{border-color:var(--coral);color:var(--coral-ink)}
 .pill.lead{background:var(--coral);border-color:var(--coral);color:#1D1C1A}
-@media (max-width:720px){.roster li{grid-template-columns:1fr auto;row-gap:4px}.roster .genre{grid-column:1/-1;order:3}.roster .cc{order:2;justify-self:end}.roster .role{grid-column:1/-1;justify-self:start;text-align:left;order:4}}
+.roster .links{display:flex;gap:6px;justify-content:flex-end;align-self:center}
+.icon-link{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-soft);transition:color .2s,border-color .2s,background .2s}
+.icon-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+.icon-link svg .fill{fill:currentColor;stroke:none}
+.icon-link:hover,.icon-link:focus-visible{color:#1D1C1A;background:var(--coral);border-color:var(--coral)}
+@media (max-width:720px){.roster li{grid-template-columns:1fr auto;row-gap:6px}.roster .genre{grid-column:1/-1;order:3}.roster .cc{order:2;justify-self:end}.roster .role{justify-self:start;text-align:left;order:4;align-self:center}.roster .links{order:5}}
 .agency{color:var(--ink);text-decoration:underline;text-decoration-color:var(--coral);text-underline-offset:3px}
 .agency:hover{color:var(--coral-ink)}
 
