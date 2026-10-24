@@ -264,7 +264,7 @@ async function copyMail() {
             <ul class="cert-list">
               <li><span>Concert Photography Masterclass</span><span class="by">Skillshare</span><span class="y">2024</span></li>
               <li><span>Google Analytics Individual Qualification</span><span class="by">Google</span><span class="y">2021</span></li>
-              <li><span>Music Business Foundations</span><span class="by">Berklee Online</span><span class="y">2021</span></li>
+              <li><a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/NLUSXB6VUZ8G" target="_blank" rel="noopener">Music Business Foundations ↗</a><span class="by">Berklee Online</span><span class="y">2021</span></li>
               <li><span>Marketing</span><span class="by">Woom Italia</span><span class="y">2021</span></li>
               <li><span>Google Ads Display Certification</span><span class="by">Google</span><span class="y">2021</span></li>
               <li><span>Social Media Marketing Specialist</span><span class="by">Sudformazione</span><span class="y">2021</span></li>
