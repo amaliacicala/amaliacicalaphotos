@@ -1,32 +1,25 @@
-# Concert Photography Portfolio
+# amaliacicala.com
 
-Personal concert photography portfolio built with `Vue 3` + `TypeScript` + `Vuetify`. 
+Portfolio site for Amalia Cicala: artist management, music marketing and concert photography.
 
-Photo upload is managed with the `Flickr API`.
+Built with Vue 3, Vue Router and Vite. Hosted on Netlify.
 
-## Deploy Status
-[![Netlify Status](https://api.netlify.com/api/v1/badges/11ac34e3-945b-4923-b3b1-fbe65228260a/deploy-status)](https://app.netlify.com/sites/amaliacicalaphotos/deploys)
-
-## Project Setup
+## Run locally
 
 ```sh
 npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build in dist/
 ```
 
-### Compile and Hot-Reload for Development
+## Content
 
-```sh
-npm run dev
-```
+- **Portfolio page:** `src/views/HomeView.vue`
+- **Styles and colours:** `src/styles/main.css` (colour tokens at the top)
+- **Photos of Amalia used on the page:** `public/img/me/`
+- **Photography albums:** `photos/` (see `photos/README.md` for how to add one)
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+`npm run photos` (run automatically by `dev` and `build`) turns the `photos/`
+folder into web-sized images in `public/photos-gen/`, the album list in
+`src/content/photos.generated.json`, and `public/sitemap.xml`. Those files are
+generated, so they are not committed.

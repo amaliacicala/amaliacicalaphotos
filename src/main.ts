@@ -1,14 +1,6 @@
 import { createApp } from 'vue';
-import { registerPlugins } from './plugins';
 import App from './App.vue';
-import './scss/settings.scss';
+import router from './router';
+import './styles/main.css';
 
-const app = createApp(App);
-
-const mount = async () => {
-  await registerPlugins(app);
-
-  app.mount('#app');
-};
-
-mount();
+createApp(App).use(router).mount('#app');
