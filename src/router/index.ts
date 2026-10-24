@@ -11,7 +11,7 @@ const router = createRouter({
       name: 'Home',
       component: HomeView,
       meta: {
-        title: `${SITE} | Artist Manager and Music Marketer, Milan`,
+        title: `${SITE} | Artist Manager & Metal Music Marketer, Milan`,
         description:
           'Amalia Cicala, artist manager and music marketer at BANDS Management, based in Milan and working worldwide. Management, marketing, booking and touring for progressive and heavy bands.'
       }
