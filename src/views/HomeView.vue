@@ -5,6 +5,24 @@ const addr = ref<HTMLAnchorElement | null>(null);
 const copyLabel = ref('Copy');
 const EMAIL = 'amalia@bands.management';
 
+type LinkKind = 'web' | 'listen' | 'patreon';
+const linkLabels: Record<LinkKind, string> = { web: 'their website', listen: 'Spotify', patreon: 'Patreon' };
+const spotify = (id: string) => ({ kind: 'listen' as const, href: `https://open.spotify.com/artist/${id}` });
+const web = (href: string) => ({ kind: 'web' as const, href });
+const manager = { role: 'Manager', roleClass: 'lead' };
+const team = { role: 'Co-manager', roleClass: 'co' };
+
+const artists = [
+  { name: 'Benthos', genre: 'Progressive metal, mathcore', country: 'ITA', ...manager, links: [web('https://benthos-band.com/'), spotify('0A7v88d7h8uYeGaBhflb45')] },
+  { name: 'Earthside', genre: 'Progressive metal, post-rock, cinematic rock', country: 'USA', ...team, links: [web('https://www.earthsideband.com/'), spotify('6mRDRKsNautYuxybddnvgg')] },
+  { name: 'Einar Solberg', genre: 'Progressive rock, solo artist', country: 'NOR', ...team, links: [web('https://einarsolberg.com/'), spotify('20xK8nEhn71rTjjBNoR5nv')] },
+  { name: 'Caligula’s Horse', genre: 'Progressive metal', country: 'AUS', ...team, links: [web('https://www.caligulashorse.com/'), spotify('6Zd7AjXsoLaweP9FHyudVC')] },
+  { name: 'Textures', genre: 'Progressive metal', country: 'NED', ...team, links: [web('https://texturesband.com/'), spotify('6v9XKyEf4HKmUMr3D6weIO')] },
+  { name: 'Voyager', genre: 'Progressive pop metal', country: 'AUS', ...team, links: [web('https://www.voyagerau.com/'), spotify('16fltNcwTM5V9rnxIlcha4')] },
+  { name: 'Unprocessed', genre: 'Progressive metalcore, modern metal', country: 'GER', ...team, links: [web('https://www.unprocessed.band/'), spotify('13GH7wviJQ9gfZmr1pXHS4')] },
+  { name: 'Leprous', genre: 'Progressive metal', country: 'NOR', role: 'Patreon', roleClass: 'sage', links: [{ kind: 'patreon' as const, href: 'https://www.patreon.com/Leprous' }] }
+];
+
 function selectAddress() {
   if (!addr.value) return;
   const range = document.createRange();
@@ -77,16 +95,30 @@ async function copyMail() {
           </div>
         </div>
       </div>
-      <div class="legend" aria-hidden="true"><span class="pill lead">Manager</span><span>sole management</span><span class="pill co">Co-manager</span><span>shared management, BANDS team</span><span class="pill sage">Patreon</span><span>supporter community, BANDS team</span></div>
+      <div class="legend" aria-hidden="true"><span class="pill lead">Manager</span><span>sole management</span><span class="pill co">Co-manager</span><span>BANDS team</span><span class="pill sage">Patreon</span><span>supporter community, BANDS team</span></div>
       <ul class="roster">
-        <li><span class="name">Benthos</span><span class="genre">Progressive metal, mathcore</span><span class="cc">ITA</span><span class="role"><span class="pill lead">Manager</span></span></li>
-        <li><span class="name">Earthside</span><span class="genre">Progressive metal, post-rock, cinematic rock</span><span class="cc">USA</span><span class="role"><span class="pill co">Co-manager</span></span></li>
-        <li><span class="name">Einar Solberg</span><span class="genre">Progressive rock, solo artist</span><span class="cc">NOR</span><span class="role"><span class="pill co">Co-manager</span></span></li>
-        <li><span class="name">Caligula’s Horse</span><span class="genre">Progressive metal</span><span class="cc">AUS</span><span class="role"><span class="pill co">Co-manager</span></span></li>
-        <li><span class="name">Textures</span><span class="genre">Progressive metal</span><span class="cc">NED</span><span class="role"><span class="pill co">Co-manager</span></span></li>
-        <li><span class="name">Voyager</span><span class="genre">Progressive pop metal</span><span class="cc">AUS</span><span class="role"><span class="pill co">Co-manager</span></span></li>
-        <li><span class="name">Unprocessed</span><span class="genre">Progressive metalcore, modern metal</span><span class="cc">GER</span><span class="role"><span class="pill co">Co-manager</span></span></li>
-        <li><span class="name">Leprous</span><span class="genre">Progressive metal</span><span class="cc">NOR</span><span class="role"><span class="pill sage">Patreon</span></span></li>
+        <li v-for="artist in artists" :key="artist.name">
+          <span class="name">{{ artist.name }}</span>
+          <span class="genre">{{ artist.genre }}</span>
+          <span class="cc">{{ artist.country }}</span>
+          <span class="role"><span :class="['pill', artist.roleClass]">{{ artist.role }}</span></span>
+          <span class="links">
+            <a
+              v-for="link in artist.links"
+              :key="link.kind"
+              class="icon-link"
+              :href="link.href"
+              target="_blank"
+              rel="noopener"
+              :title="`${artist.name} on ${linkLabels[link.kind]}`"
+              :aria-label="`${artist.name} on ${linkLabels[link.kind]}`"
+            >
+              <svg v-if="link.kind === 'web'" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" /></svg>
+              <svg v-else-if="link.kind === 'listen'" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M10 8.5v7l6-3.5z" class="fill" /></svg>
+              <svg v-else viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg>
+            </a>
+          </span>
+        </li>
       </ul>
     </div>
   </section>
@@ -182,7 +214,12 @@ async function copyMail() {
           <li><span class="when">2025 – now</span><div>
             <h3>Artist Manager</h3>
             <p class="org">BANDS Management · Worthing, UK · Full-time, hybrid</p>
-            <p class="d">Sole manager of Benthos since 2023, covering management, marketing, booking and tour management. Co-manager of Earthside, Einar Solberg, Caligula’s Horse, Textures, Voyager and Unprocessed, working on releases, campaigns, touring and merch. Runs the Leprous Patreon with the team: content planning, posting, exclusive drops, community management and supporter merch.</p>
+            <p class="d">Sole manager of Benthos, now as part of the agency, covering management, marketing, booking and tour management. Part of the management team for Earthside, Einar Solberg, Caligula’s Horse, Textures, Voyager and Unprocessed, working on releases, campaigns, touring and merch. Runs the Leprous Patreon with the team: content planning, posting, community management and supporter merch.</p>
+          </div></li>
+          <li><span class="when">2023 – 2025</span><div>
+            <h3>Artist Manager</h3>
+            <p class="org">Independent · Milan</p>
+            <p class="d">Started managing Benthos on my own in 2023, covering management, marketing, booking and tour management, before joining BANDS Management.</p>
           </div></li>
           <li><span class="when">2020 – now</span><div>
             <h3>Music Marketing &amp; Digital Management</h3>
