@@ -105,7 +105,7 @@ async function copyMail() {
         <article class="case">
           <div class="case-side">
             <span class="who">Benthos</span>
-            <span class="yr">2024 – now</span>
+            <span class="yr">2023 – now</span>
             <span class="role-line">Sole manager</span>
             <div class="tags"><span class="pill">Management</span><span class="pill">Booking</span><span class="pill">Tour management</span><span class="pill">Paid social</span><span class="pill">Socials &amp; visuals</span></div>
             <figure class="rail-photo"><img src="/img/me/benthos-sony.jpg" alt="Amalia with Benthos outside Sony Music" loading="lazy" width="640" height="800"><figcaption>With Benthos at Sony Music</figcaption></figure>
@@ -182,7 +182,7 @@ async function copyMail() {
           <li><span class="when">2025 – now</span><div>
             <h3>Artist Manager</h3>
             <p class="org">BANDS Management · Worthing, UK · Full-time, hybrid</p>
-            <p class="d">Sole manager of Benthos since 2024, covering management, marketing, booking and tour management. Co-manager of Earthside, Einar Solberg, Caligula’s Horse, Textures, Voyager and Unprocessed, working on releases, campaigns, touring and merch. Runs the Leprous Patreon with the team: content planning, posting, exclusive drops, community management and supporter merch.</p>
+            <p class="d">Sole manager of Benthos since 2023, covering management, marketing, booking and tour management. Co-manager of Earthside, Einar Solberg, Caligula’s Horse, Textures, Voyager and Unprocessed, working on releases, campaigns, touring and merch. Runs the Leprous Patreon with the team: content planning, posting, exclusive drops, community management and supporter merch.</p>
           </div></li>
           <li><span class="when">2020 – now</span><div>
             <h3>Music Marketing &amp; Digital Management</h3>
@@ -195,9 +195,9 @@ async function copyMail() {
               <li>Coaching on fan growth, branding and messaging</li>
             </ul>
           </div></li>
-          <li><span class="when">Freelance</span><div>
+          <li><span class="when">2023 – now</span><div>
             <h3>Concert Photographer</h3>
-            <p class="org">Independent</p>
+            <p class="org">Freelance · Milan &amp; worldwide</p>
             <p class="d">Live photography for bands and venues.</p>
           </div></li>
         </ol>
