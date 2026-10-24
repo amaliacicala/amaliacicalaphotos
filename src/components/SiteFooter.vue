@@ -11,7 +11,7 @@ const socials = [
 <template>
   <footer>
     <div class="wrap">
-      <span>Amalia Cicala © {{ year }} · Milan, Italy · P.IVA 13915370962</span>
+      <span class="legal">Amalia Cicala © {{ year }}<span class="sep" aria-hidden="true">·</span>Milan, Italy<span class="sep" aria-hidden="true">·</span><span class="nowrap">P.IVA 13915370962</span></span>
       <ul class="socials" aria-label="Social profiles">
         <li v-for="s in socials" :key="s.label">
           <a :href="s.href" target="_blank" rel="noopener me">{{ s.label }}</a>

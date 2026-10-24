@@ -210,6 +210,8 @@ section.block{border-top:1px solid var(--line);padding-block:clamp(56px,8vw,104p
 .copy:hover{border-color:var(--coral)}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 24px;padding-block:20px;font-size:.8rem;color:var(--ink-soft)}
+.nowrap{white-space:nowrap}
+.legal .sep{display:inline-block;margin-inline:.75em;color:var(--coral)}
 .socials{display:flex;gap:18px;list-style:none;margin:0;padding:0}
 .socials a{font-family:var(--display);font-weight:600;font-size:.8rem;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--coral);padding-bottom:1px}
 .socials a:hover{color:var(--coral-ink)}
