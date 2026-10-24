@@ -49,7 +49,7 @@ nav.top ul a:hover{color:var(--ink)}
 
 /* hero */
 .hero{padding-block:clamp(56px,10vw,120px) clamp(48px,7vw,88px)}
-.hero h1{font-size:clamp(3.2rem,12vw,10rem);font-weight:800;letter-spacing:-.035em;line-height:.88}
+.hero h1{font-size:clamp(2.8rem,9vw,7.5rem);font-weight:800;letter-spacing:-.035em;line-height:.88}
 .hero h1 .ln2{display:block;color:var(--coral)}
 .hero-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);margin-top:clamp(32px,5vw,56px);padding-top:clamp(28px,4vw,40px);border-top:1px solid var(--ink);align-items:start}
 .hero-text{display:grid;gap:22px;justify-items:start;min-width:0}

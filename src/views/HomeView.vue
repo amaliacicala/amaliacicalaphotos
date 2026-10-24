@@ -40,7 +40,7 @@ async function copyMail() {
             <a class="btn" href="#contact">Get in touch</a>
           </div>
         </div>
-        <img class="portrait" src="/img/me/download.jpg" alt="Amalia Cicala at Download Festival" width="900" height="506">
+        <img class="portrait" src="/img/me/download.jpg" alt="Amalia Cicala at Download Festival" width="900" height="645">
       </div>
     </div>
   </header>
