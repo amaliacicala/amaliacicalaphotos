@@ -29,10 +29,10 @@ async function copyMail() {
 <template>
   <header class="hero" id="top">
     <div class="wrap">
-      <div class="hero-top"><h1><span class="ln1">Amalia</span><span class="ln2">Cicala</span></h1><img class="portrait" src="/img/me/download.jpg" alt="Amalia Cicala at Download Festival" width="900" height="506"></div>
-      <div class="hero-grid">
-        <p class="hero-lede">I manage and market progressive and heavy bands, from the release plan and the ad budget to the merch table and the border crossing.</p>
-        <div class="hero-meta">
+      <h1><span class="ln1">Amalia</span> <span class="ln2">Cicala</span></h1>
+      <div class="hero-body">
+        <div class="hero-text">
+          <p class="hero-lede">I manage and market progressive and heavy bands, from the release plan and the ad budget to the merch table and the border crossing.</p>
           <div class="roles" aria-label="Disciplines"><span>Artist Management</span><span>Music Marketing</span><span>Touring</span><span>Photography</span></div>
           <p class="now">Based in <b>Milan</b>, working worldwide. Currently <b>Artist Manager at BANDS Management</b>, with artists from Italy, the USA, Norway, Australia, the Netherlands and Germany.</p>
           <div class="btns">
@@ -40,6 +40,7 @@ async function copyMail() {
             <a class="btn" href="#contact">Get in touch</a>
           </div>
         </div>
+        <img class="portrait" src="/img/me/download.jpg" alt="Amalia Cicala at Download Festival" width="900" height="506">
       </div>
     </div>
   </header>
