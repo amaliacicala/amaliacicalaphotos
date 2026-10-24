@@ -112,7 +112,7 @@ async function copyMail() {
             <figure class="rail-photo"><img src="/img/me/benthos-insideout.jpg" alt="Amalia with Benthos and the InsideOut Music team at the label office" loading="lazy" width="900" height="600"><figcaption>With Benthos and the InsideOut Music team</figcaption></figure>
           </div>
           <div>
-            <h3>From Nothing, and a first year on European stages</h3>
+            <h3><i>From Nothing</i>, and a first year on European stages</h3>
             <p class="summary">I run every side of the band: management, marketing, booking and the road. Since their InsideOut Music debut that has meant festival bills, major support tours and a first UK headline run.</p>
             <div class="case-cols">
               <div><h4>What I do</h4><ul>
@@ -200,21 +200,6 @@ async function copyMail() {
             <p class="org">Independent</p>
             <p class="d">Live photography for bands and venues.</p>
           </div></li>
-          <li><span class="when">2019 – 2024</span><div>
-            <h3>Volunteer Steward</h3>
-            <p class="org">ArcTanGent Festival, Bristol</p>
-            <p class="d">Three editions as a volunteer steward, years before bringing Benthos to its stage in 2026.</p>
-          </div></li>
-          <li><span class="when">2019</span><div>
-            <h3>Volunteer Steward</h3>
-            <p class="org">Wallride Festival</p>
-            <p class="d">Social media, ticket sales, info point, contest registrations and merch sales.</p>
-          </div></li>
-          <li><span class="when">2015 – 2016</span><div>
-            <h3>Volunteer, Street Team</h3>
-            <p class="org">Steven Wilson</p>
-            <p class="d">Sold official merchandise, welcomed fans and processed payments at four shows across Italy and Germany.</p>
-          </div></li>
         </ol>
         <aside class="kit" aria-label="Toolkit">
           <div class="kit-group"><h3>Marketing</h3><div class="chips"><span>Meta Ads Manager</span><span>Meta Pixel</span><span>Google Ads</span><span>Google Analytics</span><span>SEO</span><span>Feature.fm</span><span>Bandsintown</span><span>Songkick</span></div></div>
@@ -222,6 +207,30 @@ async function copyMail() {
           <div class="kit-group"><h3>Operations</h3><div class="chips"><span>Google Workspace</span><span>Notion</span><span>Excel</span><span>Daysheets</span><span>Shopify</span><span>SumUp POS</span><span>Discord</span><span>ATA Carnet</span></div></div>
           <div class="kit-group"><h3>Languages</h3><div class="chips"><span>Italian · native</span><span>English · C2</span><span>German · B1</span></div></div>
         </aside>
+      </div>
+
+      <div class="volunteer" aria-labelledby="vol-h">
+        <h3 class="sub-sm" id="vol-h">Volunteering</h3>
+        <ul class="vol-list">
+          <li>
+            <span class="when-sm">2019 – 2024</span>
+            <h4>Volunteer Steward</h4>
+            <p class="org">ArcTanGent Festival, Bristol</p>
+            <p class="d">Three editions as a volunteer steward, years before bringing Benthos to its stage in 2026.</p>
+          </li>
+          <li>
+            <span class="when-sm">2019</span>
+            <h4>Volunteer Steward</h4>
+            <p class="org">Wallride Festival</p>
+            <p class="d">Social media, ticket sales, info point, contest registrations and merch sales.</p>
+          </li>
+          <li>
+            <span class="when-sm">2015 – 2016</span>
+            <h4>Volunteer, Street Team</h4>
+            <p class="org">Steven Wilson</p>
+            <p class="d">Sold official merchandise, welcomed fans and processed payments at four shows across Italy and Germany.</p>
+          </li>
+        </ul>
       </div>
 
       <div class="edu" aria-labelledby="edu-h">
