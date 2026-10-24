@@ -39,10 +39,11 @@ const router = createRouter({
     { path: '/photos/gallery/:id', redirect: '/photos' },
     { path: '/:pathMatch(.*)*', redirect: '/' }
   ],
-  scrollBehavior(to, _from, saved) {
-    if (saved) return saved;
-    if (to.hash) return { el: to.hash, top: 72, behavior: 'smooth' };
-    return { top: 0 };
+  scrollBehavior(to, from, saved) {
+    const target = saved || (to.hash ? { el: to.hash, top: 72, behavior: 'smooth' as const } : { top: 0 });
+    // When the page changes, wait for the fade between pages to finish
+    if (to.path !== from.path) return new Promise((resolve) => setTimeout(() => resolve(target), 340));
+    return target;
   }
 });
 

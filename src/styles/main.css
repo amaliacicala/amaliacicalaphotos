@@ -83,9 +83,10 @@ section.block{border-top:1px solid var(--line);padding-block:clamp(56px,8vw,104p
 
 /* roster */
 .roster{list-style:none;margin:0;padding:0;border-top:1px solid var(--sage)}
-.roster li{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.6fr) 56px minmax(0,.8fr) 72px;gap:16px;align-items:baseline;padding-block:20px;border-bottom:1px solid var(--line);transition:padding .25s}
-.roster li:hover{padding-left:10px}
-.roster .name{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.4rem);letter-spacing:-.02em;line-height:1.05}
+.roster li{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.4fr) 40px minmax(0,.7fr) 72px;gap:16px;align-items:baseline;padding-block:20px;border-bottom:1px solid var(--line)}
+.roster .name{transition:transform .25s,color .2s}
+.roster li:hover .name{transform:translateX(8px)}
+.roster .name{font-family:var(--display);font-weight:700;font-size:clamp(1.4rem,2.6vw,2.2rem);letter-spacing:-.02em;line-height:1.05}
 .roster li:hover .name{color:var(--coral)}
 .roster .genre{color:var(--ink-soft);font-size:.95rem}
 .roster .cc{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.1em}
@@ -227,7 +228,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
   .hero h1 .ln2{animation-delay:.12s}
   @keyframes rise{from{transform:translateY(.25em);opacity:.0001}to{transform:none;opacity:1}}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.roster li{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.roster .name{transition:none}}
 
 /* ---------- Photography ---------- */
 nav.top ul a.current{color:var(--ink);text-decoration:underline;text-decoration-color:var(--coral);text-underline-offset:6px}
@@ -235,7 +236,7 @@ nav.top ul a.current{color:var(--ink);text-decoration:underline;text-decoration-
 .based{margin-top:22px;font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--ink-soft)}
 .photos-head{padding-block:clamp(48px,8vw,96px) clamp(28px,4vw,44px)}
 .photos-head .sec-head{margin-bottom:0}
-.page-h{font-size:clamp(2rem,8.4vw,5rem);font-weight:800;letter-spacing:-.03em;line-height:.95}
+.page-h{font-size:clamp(1.9rem,5.4vw,4.2rem);font-weight:800;letter-spacing:-.03em;line-height:.95}
 .photos-cta{margin-top:24px}
 .album-meta{margin-top:14px;font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--coral-ink)}
 .label.back{text-decoration:none}
@@ -270,3 +271,39 @@ section.albums-block{padding-block:0 clamp(56px,8vw,104px);border-top:0}
 .lb-next{right:calc(16px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
 @media (max-width:640px){.lb-prev,.lb-next{top:auto;bottom:calc(8px + env(safe-area-inset-bottom,0px));transform:none}}
 @media (prefers-reduced-motion:reduce){.album-cover img,.masonry-item img{transition:none}}
+
+/* ---------- Motion ---------- */
+/* Page changes fade through */
+.page-enter-active,.page-leave-active{transition:opacity .3s ease,transform .3s ease}
+.page-enter-from{opacity:0;transform:translateY(10px)}
+.page-leave-to{opacity:0}
+
+/* Content rises into place as it scrolls into view (only when JS adds .js-reveal) */
+.js-reveal .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 70ms)}
+.js-reveal .rv.in{opacity:1;transform:none}
+
+/* Hero: name rises, then the text and photo follow */
+@media (prefers-reduced-motion:no-preference){
+  .hero-body{animation:fadeUp .9s .35s cubic-bezier(.2,.7,.2,1) both}
+  .hero .portrait{animation:fadeUp 1s .5s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes fadeUp{from{opacity:.0001;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+  /* Nav links: underline grows from the left */
+  nav.top ul a{background:linear-gradient(var(--coral),var(--coral)) left bottom/0 1.5px no-repeat;padding-bottom:3px;transition:background-size .3s ease,color .2s}
+  nav.top ul a:hover{background-size:100% 1.5px}
+  nav.top ul a.current{text-decoration:none;background-size:100% 1.5px}
+
+  /* Buttons lift a touch */
+  .btn{transition:background .2s,color .2s,border-color .2s,transform .2s}
+  .btn:hover{transform:translateY(-2px)}
+
+  /* Service columns: coral rule slides in on hover */
+  .svc{position:relative}
+  .svc::before{content:"";position:absolute;top:-1px;left:0;height:2px;width:0;background:var(--coral);transition:width .4s cubic-bezier(.2,.7,.2,1)}
+  .svc + .svc::before{left:22px}
+  .svc:hover::before{width:48px}
+
+  /* Lightbox photo fades in */
+  .lightbox img{animation:lbIn .35s ease both}
+  @keyframes lbIn{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+}
