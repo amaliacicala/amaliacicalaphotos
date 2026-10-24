@@ -21,6 +21,47 @@ const SELECTOR = [
   '.masonry li'
 ].join(',');
 
+// Rules that draw themselves across when they come into view
+const LINES = ['.hero-body', '.services', '.roster', '.cases', '.timeline', '.vol-list', '.edu-grid', '.albums', '.masonry', '.albums-empty'].join(',');
+
+// Big headings whose words slide up from behind a mask
+const HEADINGS = ['.hero h1', '.sec-head h2', '.page-h', '.contact h2'].join(',');
+
+/** Wrap every word in a masked span, keeping inner tags like <em> and <i>. */
+function splitWords(root: HTMLElement) {
+  if (root.dataset.split) return;
+  root.dataset.split = '1';
+  let n = 0;
+  const walk = (node: Node) => {
+    Array.from(node.childNodes).forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const parts = (child.textContent || '').split(/(\s+)/);
+        const frag = document.createDocumentFragment();
+        parts.forEach((part) => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) {
+            frag.appendChild(document.createTextNode(part));
+            return;
+          }
+          const w = document.createElement('span');
+          w.className = 'w';
+          const inner = document.createElement('span');
+          inner.className = 'wi';
+          inner.style.setProperty('--w', String(n++));
+          inner.textContent = part;
+          w.appendChild(inner);
+          frag.appendChild(w);
+        });
+        child.replaceWith(frag);
+      } else if (child.nodeType === Node.ELEMENT_NODE) {
+        walk(child);
+      }
+    });
+  };
+  walk(root);
+  root.setAttribute('aria-label', root.textContent || '');
+}
+
 export function useReveal() {
   const router = useRouter();
   let io: IntersectionObserver | null = null;
@@ -28,6 +69,12 @@ export function useReveal() {
 
   const scan = () => {
     if (!io) return;
+    document.querySelectorAll<HTMLElement>(HEADINGS).forEach(splitWords);
+    document.querySelectorAll<HTMLElement>(LINES).forEach((el) => {
+      if (el.classList.contains('ln')) return;
+      el.classList.add('ln');
+      io!.observe(el);
+    });
     document.querySelectorAll<HTMLElement>(SELECTOR).forEach((el) => {
       if (el.classList.contains('rv')) return;
       // Stagger siblings of the same kind a little
