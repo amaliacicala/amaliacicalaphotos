@@ -14,6 +14,8 @@
     "photos": "node scripts/build-photos.mjs"
   },
   "dependencies": {
+    "@fontsource/instrument-sans": "^5.2.7",
+    "@fontsource/syne": "^5.2.7",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },
