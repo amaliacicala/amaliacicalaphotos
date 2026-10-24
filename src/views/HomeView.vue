@@ -77,7 +77,7 @@ async function copyMail() {
           </div>
         </div>
       </div>
-      <div class="legend" aria-hidden="true"><span class="pill lead">Manager</span><span>sole management</span><span class="pill co">Co-manager</span><span>shared management, BANDS team</span><span class="pill sage">Patreon</span><span>supporter community, BANDS team</span></div>
+      <div class="legend" aria-hidden="true"><span class="pill lead">Manager</span><span>sole management</span><span class="pill co">Co-manager</span><span>BANDS team</span><span class="pill sage">Patreon</span><span>supporter community, BANDS team</span></div>
       <ul class="roster">
         <li><span class="name">Benthos</span><span class="genre">Progressive metal, mathcore</span><span class="cc">ITA</span><span class="role"><span class="pill lead">Manager</span></span></li>
         <li><span class="name">Earthside</span><span class="genre">Progressive metal, post-rock, cinematic rock</span><span class="cc">USA</span><span class="role"><span class="pill co">Co-manager</span></span></li>
@@ -182,7 +182,7 @@ async function copyMail() {
           <li><span class="when">2025 – now</span><div>
             <h3>Artist Manager</h3>
             <p class="org">BANDS Management · Worthing, UK · Full-time, hybrid</p>
-            <p class="d">Sole manager of Benthos, now as part of the agency, covering management, marketing, booking and tour management. Co-manager of Earthside, Einar Solberg, Caligula’s Horse, Textures, Voyager and Unprocessed, working on releases, campaigns, touring and merch. Runs the Leprous Patreon with the team: content planning, posting, exclusive drops, community management and supporter merch.</p>
+            <p class="d">Sole manager of Benthos, now as part of the agency, covering management, marketing, booking and tour management. Part of the management team for Earthside, Einar Solberg, Caligula’s Horse, Textures, Voyager and Unprocessed, working on releases, campaigns, touring and merch. Runs the Leprous Patreon with the team: content planning, posting, exclusive drops, community management and supporter merch.</p>
           </div></li>
           <li><span class="when">2023 – 2025</span><div>
             <h3>Artist Manager</h3>
