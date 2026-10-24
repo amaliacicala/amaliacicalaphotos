@@ -1,1 +1,9 @@
+# Old pages from the previous site
+/artist-management          /#roster        301
+/music-digital-marketing    /#about         301
+/photos/albums              /photos         301
+/photos/contacts            /#contact       301
+/photos/gallery/*           /photos         301
+
+# Single-page app fallback
 /*    /index.html   200

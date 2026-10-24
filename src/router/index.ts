@@ -1,72 +1,66 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeGlobalView from '../views/global/HomeGlobalView.vue';
-import ArtistManagementView from '../views/management/ArtistManagementView.vue';
-import HomeGallery from '../components/photos/HomeGallery.vue';
-import MarketingView from '../views/marketing/MarketingView.vue';
+import HomeView from '../views/HomeView.vue';
+
+const SITE = 'Amalia Cicala';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'HomeGlobal',
-      component: HomeGlobalView
-    },
-    {
-      path: '/artist-management',
-      name: 'ArtistManagement',
-      component: ArtistManagementView,
-      meta: { title: 'Artist Management Services' }
+      name: 'Home',
+      component: HomeView,
+      meta: {
+        title: `${SITE} | Artist Manager and Music Marketer, Milan`,
+        description:
+          'Amalia Cicala, artist manager and music marketer at BANDS Management, based in Milan and working worldwide. Management, marketing, booking and touring for progressive and heavy bands.'
+      }
     },
     {
       path: '/photos',
-      name: 'HomePhotos',
-      component: HomeGallery,
-      meta: { title: 'Concert and Music Photography' }
+      name: 'Photos',
+      component: () => import('../views/photos/PhotosView.vue'),
+      meta: {
+        title: `Concert Photographer in Milan | ${SITE}`,
+        description:
+          'Concert and music photography by Amalia Cicala, a concert photographer based in Milan, Italy, available for shows, festivals and press shoots worldwide.'
+      }
     },
     {
-      path: '/photos/contacts',
-      name: 'Contacts',
-      component: () => import('../views/photos/ContactsView.vue'),
-      meta: { title: 'Concert and Music Photography | Contacts' }
+      path: '/photos/:slug',
+      name: 'Album',
+      component: () => import('../views/photos/AlbumView.vue')
     },
-    {
-      path: '/photos/albums',
-      name: 'Albums',
-      component: () => import('../views/photos/AlbumsView.vue'),
-      meta: { title: 'Concert and Music Photography | Photo Albums' }
-    },
-    {
-      path: '/photos/gallery/:photosetId',
-      name: 'AlbumGallery',
-      component: () => import('../views/photos/GalleryView.vue'),
-      meta: { title: 'Concert and Music Photography | Album Gallery' }
-    },
-    {
-      path: '/music-digital-marketing',
-      name: 'Marketing',
-      component: MarketingView,
-      meta: { title: 'Music Digital Marketing Services' }
-    }
+    // Old pages from the previous site
+    { path: '/artist-management', redirect: { path: '/', hash: '#roster' } },
+    { path: '/music-digital-marketing', redirect: { path: '/', hash: '#about' } },
+    { path: '/photos/albums', redirect: '/photos' },
+    { path: '/photos/contacts', redirect: { path: '/', hash: '#contact' } },
+    { path: '/photos/gallery/:id', redirect: '/photos' },
+    { path: '/:pathMatch(.*)*', redirect: '/' }
   ],
-  scrollBehavior(to) {
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth'
-      };
-    } else {
-      return { top: 0, behavior: 'instant' };
-    }
+  scrollBehavior(to, _from, saved) {
+    if (saved) return saved;
+    if (to.hash) return { el: to.hash, top: 72, behavior: 'smooth' };
+    return { top: 0 };
   }
 });
 
-router.beforeEach((to) => {
-  if (to.meta.title) {
-    document.title = `Amalia Cicala | ${to.meta.title}`;
-  } else {
-    document.title = 'Amalia Cicala | Artist Manager, Music Photographer, Music Digital Marketer';
+export function setMeta(title?: string, description?: string) {
+  if (title) document.title = title;
+  if (description) {
+    let tag = document.querySelector('meta[name="description"]');
+    if (!tag) {
+      tag = document.createElement('meta');
+      tag.setAttribute('name', 'description');
+      document.head.appendChild(tag);
+    }
+    tag.setAttribute('content', description);
   }
+}
+
+router.afterEach((to) => {
+  setMeta(to.meta.title as string | undefined, to.meta.description as string | undefined);
 });
 
 export default router;
