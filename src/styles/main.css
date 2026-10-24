@@ -101,6 +101,7 @@ section.block{border-top:1px solid var(--line);padding-block:clamp(56px,8vw,104p
 /* work */
 .cases{display:grid;gap:0;border-top:1px solid var(--sage)}
 .case{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(16px,4vw,56px);padding-block:clamp(32px,5vw,52px);border-bottom:1px solid var(--line)}
+.case:last-child{border-bottom:0;padding-bottom:0}
 .case-side{display:grid;gap:10px;align-content:start}
 .case-side .who{font-family:var(--display);font-weight:700;font-size:1.05rem}
 .case-side .yr{font-size:.85rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
