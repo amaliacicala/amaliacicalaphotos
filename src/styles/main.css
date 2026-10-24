@@ -137,9 +137,7 @@ section.block{border-top:1px solid var(--line);padding-block:clamp(56px,8vw,104p
 .photo-row figcaption{font-size:.78rem;color:var(--ink-soft);margin-top:6px}
 @media (max-width:520px){.photo-row{grid-template-columns:1fr 1fr}.photo-row figure:last-child{grid-column:1/-1}}
 
-.contact-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:end}
-.contact-photo{width:100%;max-width:420px;height:auto;border-radius:6px;display:block;justify-self:end}
-@media (max-width:820px){.contact-grid{grid-template-columns:1fr}.contact-photo{justify-self:start;max-width:320px}}
+.contact-grid{display:block}
 
 /* experience */
 .cv{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(32px,6vw,80px)}

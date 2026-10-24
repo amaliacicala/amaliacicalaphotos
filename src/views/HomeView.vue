@@ -290,7 +290,6 @@ async function copyMail() {
             <button class="copy" id="copyMail" type="button" @click="copyMail">{{ copyLabel }}</button>
           </div>
         </div>
-        <img class="contact-photo" src="/img/me/radar.jpg" alt="Amalia at RADAR Festival" loading="lazy" width="900" height="675">
       </div>
     </div>
   </section>
